@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "types": ["node", "unplugin-vue-macros/macros-global"],
+    "rootDir": ".",
+    "baseUrl": ".",
+    "outDir": "temp",
+    "paths": {
+      "rstar-ui/*": ["packages/rstar-ui/*"]
+    }
+  },
+  "include": [
+    "packages/rstar-ui/components.d.ts",
+    "packages/rstar-ui/env.d.ts",
+    "packages",
+  ],
+  "exclude": ["**/dist/**", "**/node_modules/**"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
