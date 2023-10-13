@@ -1,6 +1,6 @@
 
 <template>
-    <div>{{ message }}-button</div>
+    <button class="--rs:color|rs-pink-0|100 r-button--color">{{ message }}-button</button>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';

@@ -4,14 +4,15 @@
     "private": false,
     "license": "MIT",
     "description": "A Component Library for Vue 3",
-    "main": "dist/index.js",
-    "module": "dist/index.js",
+    "type": "module",
+    "main": "dist/index.mjs",
+    "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "dist/index.js",
-            "require": "dist/index.cjs",
-            "types": "dist/index.d.ts"
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs",
+            "types": "./dist/index.d.ts"
         }
     },
     "files": [
@@ -19,7 +20,7 @@
         "*.d.ts"
     ],
     "scripts": {
-        "build:tsc": "vue-tsc --declaration --emitDeclarationOnly"
+        "build": "tsup --config tsup.config.ts"
     },
     "dependencies": {
         "@rstar-ui/components": "workspace:*"

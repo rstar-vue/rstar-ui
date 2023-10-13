@@ -12,18 +12,18 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "jsx": "preserve",
-    "types": ["node", "unplugin-vue-macros/macros-global"],
+    "types": ["node", "unplugin-vue-macros/macros-global", "./packages/rstar-ui/src/components.d.ts"],
     "rootDir": ".",
     "baseUrl": ".",
-    "outDir": "temp",
     "paths": {
-      "rstar-ui/*": ["packages/rstar-ui/*"]
+        "@rstar-ui/*": ["packages/*/src"],
+        "rstar-ui": ["packages/rstar-ui/src/index.ts"]
     }
   },
   "include": [
-    "packages/rstar-ui/components.d.ts",
-    "packages/rstar-ui/env.d.ts",
-    "packages",
+    "packages/rstar-ui/src/components.d.ts",
+    "packages", 
+    "play"
   ],
   "exclude": ["**/dist/**", "**/node_modules/**"],
   "references": [{ "path": "./tsconfig.node.json" }]

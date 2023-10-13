@@ -1,18 +1,19 @@
 {
-  "name": "@rstar-ui/play",
-  "private": true,
-  "version": "0.0.1",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.4.5"
-  },
-  "dependencies": {
-    "rstar-ui": "workspace:*"
-  }
+    "name": "@rstar-ui/play",
+    "private": true,
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^4.2.3",
+        "vite": "^4.4.5"
+    },
+    "dependencies": {
+        "@rstar-ui/preset": "workspace:*",
+        "rstar-ui": "workspace:*"
+    }
 }

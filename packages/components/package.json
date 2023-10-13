@@ -2,12 +2,14 @@
     "name": "@rstar-ui/components",
     "version": "1.0.0",
     "main": "index.ts",
-    "private": true,
     "exports": {
         ".": {
-            "import": "index.ts",
-            "require": "index.ts"
+            "import": "./index.ts",
+            "require": "./index.ts"
         },
         "./*": "./*"
+    },
+    "scripts": {
+        "build": "tsup --config tsup.config.ts"
     }
 }
