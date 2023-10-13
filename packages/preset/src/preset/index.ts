@@ -4,6 +4,7 @@ import rules from '../rules'
 import shortcuts from '../shortcuts'
 import theme from '../theme'
 import defaultColor from '../colors'
+import getSafelist from '../safelist'
 
 function normalizeRules(rules: Record<string, any>) {
   const res: Array<Array<Record<string, any>>> = []
@@ -15,28 +16,19 @@ function normalizeRules(rules: Record<string, any>) {
   return res
 }
 
-const getCSSPreflights = (theme) => {
+const getPreflights = (colors) => {
   let res = ''
-
   const walk = (prefix, colors) => {
     for (const [k, v] of Object.entries(colors)) {
+      const name = `${prefix}-${k}`
       if (typeof v === 'string') {
-        res = res + '\n' + `${prefix}-${k}:${v};`
+        res = res + '\n' + `${name}:${v};`
       } else {
-        walk(prefix + k, v)
+        walk(name, v)
       }
     }
   }
-  walk('--rs', theme)
-  //   Object.keys(theme).forEach((k) => {
-  //     if (typeof theme[k] === 'string') {
-  //       res = res + '\n' + `--rs-${k}:${theme[k]};`
-  //     } else {
-  //       Object.keys(theme[k]).forEach((v) => {
-  //         res = res + '\n' + `--rs-${k}-${v}:${theme[k][v]};`
-  //       })
-  //     }
-  //   })
+  walk('--rs', colors)
   return res
 }
 
@@ -46,11 +38,12 @@ export default function preset({ colors = {} }: Record<string, any> = {}) {
     theme,
     rules: [...rules],
     shortcuts,
+    safelist: getSafelist({ rules, shortcuts }),
     preflights: [
       {
         getCSS: () => {
           return `:root {
-                    ${getCSSPreflights(defaultColor)}
+                    ${getPreflights(defaultColor)}
                 }`
         },
       },

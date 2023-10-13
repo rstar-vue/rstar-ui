@@ -1,1 +1,3 @@
-export default [['r-button--color', { color: 'var(--rs-red-1)' }]]
+export default [
+    // ['rs-button--color', { color: 'var(--rs-red-1)' }]
+]

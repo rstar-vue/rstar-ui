@@ -91,23 +91,21 @@ importers:
         specifier: 1.0.0-rc.20
         version: 1.0.0-rc.20(@algolia/client-search@4.20.0)(@types/node@20.7.1)(postcss@8.4.30)(search-insights@2.8.3)
 
-  packages/a: {}
-
-  packages/b:
-    dependencies:
-      '@rstar-ui/preset':
-        specifier: workspace:*
-        version: link:../preset
-
   packages/components: {}
 
-  packages/preset: {}
+  packages/preset:
+    dependencies:
+      '@rstar-ui/utils':
+        specifier: workspace:*
+        version: link:../utils
 
   packages/rstar-ui:
     dependencies:
       '@rstar-ui/components':
         specifier: workspace:*
         version: link:../components
+
+  packages/utils: {}
 
   play:
     dependencies:

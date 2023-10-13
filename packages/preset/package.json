@@ -12,5 +12,8 @@
         "build": "tsup --config tsup.config.ts"
     },
     "author": "",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "@rstar-ui/utils": "workspace:*"
+    }
 }
