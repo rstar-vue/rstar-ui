@@ -1,3 +1,3 @@
 export default [
-    // ['rs-button--color', { color: 'var(--rs-red-1)' }]
+    // ['rs-button-primary--shadow', { 'box-shadow': '0 0 2px 2px rgba(51,154,240, .4)' }]
 ]

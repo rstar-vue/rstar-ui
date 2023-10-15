@@ -10,8 +10,8 @@
         "docs:dev": "pnpm -C docs dev",
         "docs:build": "pnpm -C docs build",
         "docs:serve": "pnpm -C docs serve",
-        "build:components": " pnpm --filter @rstar-ui/components run build",
-        "build:preset": " pnpm --filter @rstar-ui/preset run build"
+        "build:components": "pnpm --filter @rstar-ui/components run build",
+        "build:preset": "pnpm --filter @rstar-ui/preset run build"
     },
     "author": "jackma9604",
     "license": "MIT",

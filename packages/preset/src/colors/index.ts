@@ -1,8 +1,9 @@
 export default {
-  primary: '#fff1f2',
+  primary: '#339af0',
   black: '#000000',
   white: '#ffffff',
-
+  inherit: 'inherit',
+	transparent: 'transparent',
   gray: {
     0: '#f8f9fa',
     1: '#f1f3f5',
