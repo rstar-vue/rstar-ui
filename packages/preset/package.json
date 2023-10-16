@@ -1,6 +1,6 @@
 {
     "name": "@rstar-ui/preset",
-    "version": "1.0.0",
+    "version": "0.0.1-alpha.1",
     "description": "@rstar-ui/preset",
     "main": "src/index.ts",
     "module": "dist/index.js",

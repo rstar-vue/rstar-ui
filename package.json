@@ -1,6 +1,6 @@
 {
     "name": "rstar-ui-dev",
-    "version": "1.0.0",
+    "version": "0.0.1-alpha.1",
     "main": "dist/index.js",
     "type": "module",
     "private": true,
@@ -11,7 +11,8 @@
         "docs:build": "pnpm -C docs build",
         "docs:serve": "pnpm -C docs serve",
         "build:components": "pnpm --filter @rstar-ui/components run build",
-        "build:preset": "pnpm --filter @rstar-ui/preset run build"
+        "build:preset": "pnpm --filter @rstar-ui/preset run build",
+        "publish:npm": "pnpm publish --no-git-checks --access public"
     },
     "author": "jackma9604",
     "license": "MIT",

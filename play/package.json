@@ -8,6 +8,16 @@
         "build": "vite build",
         "preview": "vite preview"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rstar-vue/rstar-ui",
+        "directory": "packages/rstar-ui"
+    },
+    "keywords": [
+        "rstar-ui",
+        "vue"
+    ],
+    "files": ["dist"],
     "devDependencies": {
         "@vitejs/plugin-vue": "^4.2.3",
         "vite": "^4.4.5"
