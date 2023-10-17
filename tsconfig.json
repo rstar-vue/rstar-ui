@@ -12,7 +12,7 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "jsx": "preserve",
-    "types": ["node", "unplugin-vue-macros/macros-global", "./packages/rstar-ui/src/components.d.ts"],
+    "types": ["node", "unplugin-vue-macros/macros-global"],
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {

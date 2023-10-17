@@ -1,6 +1,6 @@
 
 <template>
-    <button :class="cls" v-bind="$attrs">
+    <button :class="cls">
         <slot />
     </button>
 </template>
@@ -9,13 +9,13 @@ import { buttonProps } from './button'
 defineOptions({ name: 'RSButton' })
 const props = defineProps(buttonProps)
 
-const prefix = 'rs-button'
+const prefixCls = 'rs-button'
 const cls = [
-    prefix,
-    `${prefix}-${props.size}`,
-    props.type && `${prefix}-${props.type}`,
-    props.type && `${prefix}-${props.type}-active`,
-    `${prefix}_hover`,
+    prefixCls,
+    `${prefixCls}-${props.size}`,
+    props.type && `${prefixCls}-${props.type}`,
+    props.type && `${prefixCls}-${props.type}-active`,
+    `${prefixCls}_hover`,
     props.class
 ].filter(Boolean)
 
