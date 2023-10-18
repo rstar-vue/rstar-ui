@@ -1,26 +1,60 @@
-import minimist from 'minimist'
-import { findBuildTargets, runTask } from './utils.js'
-import { execa, execaSync } from 'execa'
-// const args = minimist(process.argv.slice(2))
-import { createRequire } from 'node:module'
-import buildComponent from './build-component.js'
+import path from "node:path"
+import { fileURLToPath } from "node:url"
 
-import path from 'node:path'
+import { findComponentsTarget, runTask } from "./utils.js"
+import { execa, execaSync } from "execa"
+import { createRequire } from "node:module"
+import { logger } from "rslog"
+
+import buildLib from "./build-lib.js"
 const require = createRequire(import.meta.url)
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-async function buildAll() {
-  const targets = await findBuildTargets('./')
-  console.log('targets', targets)
+// 主入口
+const mainDir = path.resolve(__dirname, "../packages/rstar-ui")
+// 组件入口
+const componentsDir = path.resolve(__dirname, "../packages/components")
+// 输出目录
+const outputDir = path.resolve(mainDir, "dist")
 
-  for (const [pkgName, pkgPath] of Object.entries(targets)) {
-    const pkg = require(path.resolve(pkgPath, 'package.json'))
-    if (!pkg.scripts.build) continue
-    console.log('execa: ', pkgName)
-    await runTask('pnpm', ['run', 'build', '-C', [pkgPath]])
-  }
-
-  const res = await buildComponent
-  console.log(res)
+async function buildMainLibrary() {
+  await buildLib("rstar-ui", mainDir, outputDir)
 }
 
-buildAll()
+async function buildComponents() {
+  const targets = await findComponentsTarget(componentsDir)
+  for (const [pkg, url] of Object.entries(targets)) {
+    await buildLib(pkg, url, `${outputDir}/${pkg}`)
+    logger.ready(`build ${pkg} success`)
+  }
+}
+
+const tasks = [
+  {
+    text: "build main library",
+    task: buildMainLibrary,
+  },
+  {
+    text: "build components",
+    task: buildComponents,
+  },
+]
+
+async function runBuildTasks() {
+  for (const { text, task } of tasks) {
+    try {
+      await task()
+      logger.ready(text)
+    } catch (err) {
+      logger.error(err)
+      throw err
+    }
+  }
+
+  logger.success("build tasks success")
+}
+
+build()
+async function build() {
+  await runBuildTasks()
+}

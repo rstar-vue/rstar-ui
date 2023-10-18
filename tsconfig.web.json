@@ -14,8 +14,7 @@
         }
     },
     "include": [
-        "packages/rstar-ui/src/components.d.ts",
-        // "packages", 
+        "packages/rstar-ui/src/global.d.ts",
         "packages"
     ],
     "exclude": [
