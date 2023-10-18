@@ -1,30 +1,9 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "lib": ["esnext", "dom"],
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "jsx": "preserve",
-    "types": ["node", "unplugin-vue-macros/macros-global"],
-    "rootDir": ".",
-    "baseUrl": ".",
-    "paths": {
-        "@rstar-ui/*": ["packages/*/src"],
-        "rstar-ui": ["packages/rstar-ui/src/index.ts"]
-    }
-  },
-  "include": [
-    "packages/rstar-ui/src/components.d.ts",
-    "packages", 
-    "play"
-  ],
-  "exclude": ["**/dist/**", "**/node_modules/**"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.node.json" }, 
+    { "path": "./tsconfig.web.json" },
+    { "path": "./tsconfig.vitest.json" },
+    { "path": "./tsconfig.play.json" }
+  ]
 }
