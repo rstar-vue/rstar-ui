@@ -1,6 +1,6 @@
 {
     "name": "rstar-ui-dev",
-    "version": "0.0.1-alpha.1",
+    "version": "0.0.1-alpha.2",
     "main": "dist/index.js",
     "type": "module",
     "private": true,
@@ -11,10 +11,15 @@
         "docs:build": "pnpm -C docs build",
         "docs:serve": "pnpm -C docs serve",
         "build": "node scripts/build.js",
-        "build:components": "pnpm --filter @rstar-ui/components run build",
-        "build:comp": "node scripts/build-lib.js",
+        "build:lib": "node scripts/build-lib.js",
         "build:preset": "pnpm --filter @rstar-ui/preset run build",
-        "publish:npm": "pnpm publish --no-git-checks --access public"
+        "publish:npm": "pnpm publish --no-git-checks --access public",
+        "lint": "eslint ./packages/**/src --ext .js,.ts,.tsx,.vue,.mjs,.cjs",
+        "lint:fix": "eslint ./packages/**/src --ext .js,.ts,.tsx,.vue,.mjs,.cjs --fix",
+        "clean": "node scripts/clean.js",
+        "clean:deps": "node scripts/clean-deps.js",
+        "prettier:check": "prettier --check .",
+        "prettier:fix": "prettier --write ."
     },
     "author": "jackma9604",
     "license": "MIT",
@@ -51,6 +56,14 @@
         "unplugin-vue-macros": "^2.6.0",
         "vite-plugin-dts": "^3.6.0",
         "vitest": "^0.34.5",
+        "vue-eslint-parser": "^9.3.2",
         "vue-tsc": "^1.8.5"
+    },
+    "lint-staged": {
+        "*.{js,vue,jsx,tsx}": [
+            "prettier --write",
+            "eslint --cache --fix",
+            "git add"
+        ]
     }
 }

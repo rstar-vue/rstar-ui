@@ -20,7 +20,7 @@ export default function genColorRule(): Rule<Theme>[] {
   const types = {
     bg: "background-color",
     text: "color",
-    border: "border-color",
+    border: "border-color"
   }
 
   return [
@@ -34,6 +34,7 @@ export default function genColorRule(): Rule<Theme>[] {
         const [prefix, descriptor] = input.split(":")
         if (!descriptor) return
 
+        // eslint-disable-next-line prefer-const
         let [type, variables, opacity = "100"] = descriptor.split("|")
         const color = normalizeColor<typeof theme.colors>(
           theme.colors,
@@ -43,9 +44,9 @@ export default function genColorRule(): Rule<Theme>[] {
         type = types[type]
         if (!type) return
         return {
-          [type]: color,
+          [type]: color
         }
-      },
-    ],
+      }
+    ]
   ]
 }

@@ -15,5 +15,5 @@ export default defineConfig({
       'rstar-ui': resolvePathForPkg('rstar-ui'),
     },
   },
-  plugins: [vue(), Unocss()], 
+  plugins: [vue(), Unocss()],
 })

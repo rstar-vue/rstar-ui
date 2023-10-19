@@ -5,7 +5,7 @@ export default defineConfig({
   presets: [presetUno(), presetAttributify(), presetIcons(), presetRStar()],
   preflights: [
     {
-      getCSS: () => ``,
-    },
-  ],
+            getCSS: () => ``
+    }
+  ]
 })

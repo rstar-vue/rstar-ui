@@ -1,3 +1,3 @@
-import { RSButton } from '@rstar-ui/components'
+import { RSButton } from "@rstar-ui/components"
 
 export default { RSButton }

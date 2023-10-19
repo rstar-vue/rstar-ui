@@ -1,10 +1,10 @@
-import path from "node:path"
-import { fileURLToPath } from "node:url"
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-import { defineConfig, build, mergeConfig } from "vite"
-import vue from "@vitejs/plugin-vue"
-import vueJSX from "@vitejs/plugin-vue-jsx"
-import dts from "vite-plugin-dts"
+import { defineConfig, build, mergeConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueJSX from '@vitejs/plugin-vue-jsx'
+import dts from 'vite-plugin-dts'
 // import version from '../package.json'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -15,8 +15,8 @@ const baseConfig = defineConfig({
   resolve: {
     alias: Object.entries(alias).map(([key, url]) => ({
       find: key,
-      replacement: path.resolve(__dirname, url),
-    })),
+      replacement: path.resolve(__dirname, url)
+    }))
   },
   plugins: [
     vue(),
@@ -24,15 +24,15 @@ const baseConfig = defineConfig({
     dts({
       tsconfigPath: path.resolve(__dirname, `../tsconfig.web.json`),
       staticImport: true,
-      rollupTypes: true,
-    }),
-  ],
+      rollupTypes: true
+    })
+  ]
 })
 const rollupOptions = defineConfig({
-  external: ["vue", "unocss"],
+  external: ['vue', 'unocss'],
   globals: {
-    vue: "Vue",
-  },
+    vue: 'Vue'
+  }
 })
 // 生成 package.json
 // const createPackageJson = (name) => {
@@ -57,14 +57,13 @@ async function buildSingle(name, pack, outDir) {
     mergeConfig(mergeConfig(rollupOptions, baseConfig), {
       build: {
         lib: {
-          entry:
-            name === "rstar-ui" ? `${pack}/src/index.ts` : `${pack}/index.ts`,
-          name: "rstar-ui",
-          fileName: (format) => `index.js`,
-          formats: ["es"],
+          entry: name === 'rstar-ui' ? `${pack}/src/index.ts` : `${pack}/index.ts`,
+          name: name,
+          fileName: (format) => `index.${format === 'cjs' ? 'cjs' : 'js'}`,
+          formats: ['es', 'cjs']
         },
-        outDir,
-      },
+        outDir
+      }
     })
   )
 }

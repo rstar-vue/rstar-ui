@@ -1,43 +1,52 @@
-import path from "node:path"
-import { fileURLToPath } from "node:url"
+import path from 'node:path'
+import fse from 'fs-extra'
+import { logger } from 'rslog'
 
-import { findComponentsTarget, runTask } from "./utils.js"
-import { execa, execaSync } from "execa"
-import { createRequire } from "node:module"
-import { logger } from "rslog"
+import { findLibTarget, setPkgVersionToPath } from './utils.js'
+import buildLib from './build-lib.js'
+import {
+  MAIN_DIR,
+  MAIN_OUTPUT_DIR,
+  LIB_DIR,
+  PRESET_DIR,
+  PRESET_OUTPUT_DIR,
+  ROOT
+} from './constant.js'
+const { readJSONSync } = fse
 
-import buildLib from "./build-lib.js"
-const require = createRequire(import.meta.url)
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
-// 主入口
-const mainDir = path.resolve(__dirname, "../packages/rstar-ui")
-// 组件入口
-const componentsDir = path.resolve(__dirname, "../packages/components")
-// 输出目录
-const outputDir = path.resolve(mainDir, "dist")
+const version = readJSONSync(path.join(ROOT, 'package.json')).version
 
 async function buildMainLibrary() {
-  await buildLib("rstar-ui", mainDir, outputDir)
+  setPkgVersionToPath(MAIN_DIR, version)
+  await buildLib('rstar-ui', MAIN_DIR, MAIN_OUTPUT_DIR)
 }
 
 async function buildComponents() {
-  const targets = await findComponentsTarget(componentsDir)
+  const targets = await findLibTarget(LIB_DIR)
   for (const [pkg, url] of Object.entries(targets)) {
-    await buildLib(pkg, url, `${outputDir}/${pkg}`)
-    logger.ready(`build ${pkg} success`)
+    logger.ready(`build ${pkg}`)
+    await buildLib(pkg, url, `${MAIN_OUTPUT_DIR}/${pkg}`)
   }
+}
+
+async function buildPreset() {
+  setPkgVersionToPath(PRESET_DIR, version)
+  await buildLib('preset', `${PRESET_DIR}/src`, PRESET_OUTPUT_DIR)
 }
 
 const tasks = [
   {
-    text: "build main library",
-    task: buildMainLibrary,
+    text: 'build main library',
+    task: buildMainLibrary
   },
   {
-    text: "build components",
-    task: buildComponents,
+    text: 'build components',
+    task: buildComponents
   },
+  {
+    text: 'build preset',
+    task: buildPreset
+  }
 ]
 
 async function runBuildTasks() {
@@ -51,7 +60,7 @@ async function runBuildTasks() {
     }
   }
 
-  logger.success("build tasks success")
+  logger.success('build tasks success')
 }
 
 build()
