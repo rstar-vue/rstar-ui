@@ -7,6 +7,8 @@
   "packageManager": "pnpm@8.8.0",
   "scripts": {
     "play": "pnpm -C play dev",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "docs:dev": "pnpm -C docs dev",
     "docs:build": "pnpm -C docs build",
     "docs:serve": "pnpm -C docs serve",
@@ -48,7 +50,6 @@
     "rimraf": "^5.0.5",
     "rslog": "^1.1.0",
     "tslib": "^2.6.2",
-    "tsup": "^7.2.0",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2",
     "unplugin-vue-macros": "^2.6.0",
