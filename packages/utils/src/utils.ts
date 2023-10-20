@@ -1,7 +1,7 @@
 export function getProperty(
   obj: Record<string, Record<string, string> | string | undefined>,
   key?: string,
-  gap = "."
+  gap = '.'
 ) {
   const keys = key?.split(gap)
   for (const i in keys) {

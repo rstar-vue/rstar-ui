@@ -1,14 +1,14 @@
 {
-    "name": "@rstar-ui/docs",
-    "version": "0.0.1",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "dev": "vitepress dev .",
-        "build": "vitepress build docs",
-        "serve": "vitepress serve docs"
-    },
-    "devDependencies": {
-        "vitepress": "1.0.0-rc.20"
-    }
+  "name": "@rstar-ui/docs",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-rc.20"
+  }
 }

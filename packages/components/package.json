@@ -1,11 +1,11 @@
 {
-    "name": "@rstar-ui/components",
-    "main": "index.ts",
-    "exports": {
-        ".": {
-            "import": "./index.ts",
-            "require": "./index.ts"
-        },
-        "./*": "./*"
-    }
+  "name": "@rstar-ui/components",
+  "main": "index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "require": "./index.ts"
+    },
+    "./*": "./*"
+  }
 }

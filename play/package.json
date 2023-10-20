@@ -1,15 +1,15 @@
 {
-    "name": "@rstar-ui/play",
-    "private": true,
-    "version": "0.0.1",
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview"
-    },
-    "dependencies": {
-        "@rstar-ui/preset": "workspace:*",
-        "rstar-ui": "workspace:*"
-    }
+  "name": "@rstar-ui/play",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@rstar-ui/preset": "workspace:*",
+    "rstar-ui": "workspace:*"
+  }
 }

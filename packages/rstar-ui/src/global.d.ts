@@ -1,6 +1,6 @@
-declare module "@vue/runtime-core" {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    RSButton: typeof import("@rstar-ui/components/Button")
+    RSButton: typeof import('@rstar-ui/components/Button')
   }
 
   interface ComponentCustomProperties {

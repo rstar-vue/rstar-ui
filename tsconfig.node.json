@@ -5,7 +5,7 @@
     "skipLibCheck": true,
     "module": "ESNext",
     "lib": ["ESNext"],
-    "types": ["node"],
+    "types": ["node"]
   },
   "include": ["scripts/**/*", "play/vite.config.ts"]
 }

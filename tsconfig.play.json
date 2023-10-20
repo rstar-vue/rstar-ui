@@ -4,10 +4,5 @@
     "allowJs": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
-  "include": [
-    "packages",
-
-    "play/env.d.ts",
-    "play/src/**/*"
-  ]
+  "include": ["packages", "play/env.d.ts", "play/src/**/*"]
 }

@@ -12,8 +12,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@rstar-ui/preset': resolvePathForPkg('preset'),
-      'rstar-ui': resolvePathForPkg('rstar-ui'),
-    },
+      'rstar-ui': resolvePathForPkg('rstar-ui')
+    }
   },
-  plugins: [vue(), Unocss()],
+  plugins: [vue(), Unocss()]
 })

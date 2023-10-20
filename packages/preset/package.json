@@ -1,19 +1,19 @@
 {
-    "name": "@rstar-ui/preset",
-    "version": "0.0.1-alpha.2",
-    "description": "@rstar-ui/preset",
-    "main": "dist/index.js",
-    "module": "dist/index.js",
-    "types": "dist/index.d.js",
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "build": "tsup --config tsup.config.ts"
-    },
-    "author": "",
-    "license": "MIT",
-    "dependencies": {
-        "@rstar-ui/utils": "workspace:*"
-    }
+  "name": "@rstar-ui/preset",
+  "version": "0.0.1-alpha.2",
+  "description": "@rstar-ui/preset",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup --config tsup.config.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@rstar-ui/utils": "workspace:*"
+  }
 }

@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 const guides = [
   { text: 'Quick Start', link: '/guide/quick-start' },
-  { text: 'Installation', link: '/guide/install' },
+  { text: 'Installation', link: '/guide/install' }
 ]
 
 const components = [
@@ -12,34 +12,34 @@ const components = [
     items: [
       {
         text: 'Button',
-        link: '/components/RSButton',
-      },
-    ],
-  },
+        link: '/components/RSButton'
+      }
+    ]
+  }
 ]
 
 const theme = [
   {
     text: 'Basic',
-    link: '/theme/Basic',
-  },
+    link: '/theme/Basic'
+  }
 ]
 const sidebar = {
   '/guide': [
     {
       text: 'Developer Guide',
-      items: guides,
-    },
+      items: guides
+    }
   ],
   '/components': components,
-  '/theme': theme,
+  '/theme': theme
 }
 
 const nav = [
   { text: 'Home', link: '/' },
   { text: 'Guide', items: guides },
   { text: 'Components', items: components },
-  { text: 'Theme', items: theme },
+  { text: 'Theme', items: theme }
 ]
 
 export default defineConfig({
@@ -48,6 +48,6 @@ export default defineConfig({
   //   lang: 'en-US',
   themeConfig: {
     nav,
-    sidebar,
-  },
+    sidebar
+  }
 })

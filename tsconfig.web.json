@@ -1,24 +1,13 @@
 {
-    "extends": "./tsconfig.base.json",
-    "compilerOptions": {
-        "composite": true,
-        "lib": [
-            "esnext",
-            "dom"
-        ],
-        "jsx": "preserve",
-        "paths": {
-            "@rstar-ui/components": [
-                "packages/components/index.ts"
-            ],
-        }
-    },
-    "include": [
-        "packages/rstar-ui/src/global.d.ts",
-        "packages"
-    ],
-    "exclude": [
-        "**/dist/**",
-        "**/node_modules/**"
-    ],
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["esnext", "dom"],
+    "jsx": "preserve",
+    "paths": {
+      "@rstar-ui/components": ["packages/components/index.ts"]
+    }
+  },
+  "include": ["packages/rstar-ui/src/global.d.ts", "packages"],
+  "exclude": ["**/dist/**", "**/node_modules/**"]
 }
