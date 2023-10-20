@@ -21,7 +21,7 @@
     "clean": "node scripts/clean.js",
     "clean:deps": "node scripts/clean-deps.js",
     "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --write packages"
+    "prettier:fix": "prettier --write ."
   },
   "author": "jackma9604",
   "license": "MIT",
@@ -59,8 +59,10 @@
     "vue-tsc": "^1.8.5"
   },
   "lint-staged": {
-    "*.{js,vue,jsx,tsx}": [
-      "eslint --fix"
+    "*.{js,ts,vue,jsx,tsx,json}": [
+      "prettier --write",
+      "eslint . --fix",
+      "git add"
     ]
   }
 }
