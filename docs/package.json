@@ -9,6 +9,10 @@
     "serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-rc.20"
+    "vitepress": "1.0.0-rc.23"
+  },
+  "dependencies": {
+    "@rstar-ui/preset": "workspace:*",
+    "rstar-ui": "workspace:*"
   }
 }

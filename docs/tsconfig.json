@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.web.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "lib": ["WebWorker"],
+    "baseUrl": ".",
+    "paths": {},
+    "types": ["../packages/rstar-ui/src/global"],
+    "jsx": "preserve"
+  },
+  "include": ["./**/*", ".vitepress/**/*", "./vite.config.ts"],
+  "exclude": ["node_modules"]
+}

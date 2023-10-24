@@ -20,8 +20,7 @@
     "lint:fix": "eslint ./packages/**/src --ext .js,.ts,.tsx,.vue,.mjs,.cjs --fix",
     "clean": "node scripts/clean.js",
     "clean:deps": "node scripts/clean-deps.js",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --write ."
+    "format": "prettier --write --check ."
   },
   "author": "jackma9604",
   "license": "MIT",
