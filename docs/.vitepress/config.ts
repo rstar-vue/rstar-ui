@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import mdPlugin from './plugins/mdPlugin'
 
 const guides = [
   { text: 'Quick Start', link: '/guide/quick-start' },
@@ -8,11 +9,11 @@ const guides = [
 const components = [
   {
     text: 'Basic',
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'Button',
-        link: '/components/RSButton'
+        link: '/components/button'
       }
     ]
   }
@@ -36,7 +37,6 @@ const sidebar = {
 }
 
 const nav = [
-  { text: 'Home', link: '/' },
   { text: 'Guide', items: guides },
   { text: 'Components', items: components },
   { text: 'Theme', items: theme }
@@ -46,6 +46,9 @@ export default defineConfig({
   title: 'RStarUi',
   description: 'A vue3 ui lib',
   //   lang: 'en-US',
+  markdown: {
+    config: (md) => mdPlugin(md)
+  },
   themeConfig: {
     nav,
     sidebar

@@ -1,3 +1,2 @@
 /// <reference types="vite/client" />
-
-export {}
+/// <reference types="vue/macros-global" />

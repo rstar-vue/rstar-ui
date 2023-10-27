@@ -1,11 +1,16 @@
-import theme from 'vitepress/theme'
-import 'virtual:uno.css'
+import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
+import Demo from '../components/demo/demo.vue'
+
+import 'virtual:uno.css'
 
 export default {
-  ...theme,
-  enhanceApp({ app }) {},
+  ...DefaultTheme,
+  enhanceApp({ app }) {
+    app.component('Demo', Demo)
+  },
+  // NotFound: ()=>'404',
   Layout() {
-    return h(theme.Layout)
+    return h(DefaultTheme.Layout)
   }
 }
