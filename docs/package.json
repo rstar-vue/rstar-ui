@@ -11,11 +11,12 @@
   "devDependencies": {
     "markdown-it": "^13.0.2",
     "markdown-it-container": "^3.0.0",
+    "prism-theme-vars": "^0.2.4",
+    "prismjs": "^1.29.0",
     "vitepress": "1.0.0-rc.23"
   },
   "dependencies": {
     "@rstar-ui/preset": "workspace:*",
-    "highlight": "^0.2.4",
     "rstar-ui": "workspace:*"
   }
 }

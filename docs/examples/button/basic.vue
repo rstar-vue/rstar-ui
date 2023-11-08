@@ -1,9 +1,8 @@
 <template>
-  <rs-button>default</rs-button>
-  <rs-button type="primary">primary</rs-button>
-  <rs-button type="success">success</rs-button>
-  <rs-button type="info">info</rs-button>
-  <rs-button type="warning">warning</rs-button>
-  <rs-button type="danger">danger</rs-button>
+  <RSButton>default</RSButton>
+  <RSButton type="primary">primary</RSButton>
+  <RSButton type="success">success</RSButton>
+  <RSButton type="info">info</RSButton>
+  <RSButton type="warning">warning</RSButton>
+  <RSButton type="danger">danger</RSButton>
 </template>
-<script lang="ts" setup></script>

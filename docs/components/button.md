@@ -9,9 +9,9 @@ Commonly used button.
 
 ## Basic usage
 
-<!-- ::: code-group -->
+::: code-group
 
-<!-- ```bash [pnpm]
+```bash [pnpm]
 pnpm add @ikun-ui/button
 ```
 
@@ -21,9 +21,7 @@ yarn add @ikun-ui/button
 
 ```bash [npm]
 npm install @ikun-ui/button
-``` -->
-
-<!-- ::: -->
+```
 
 Use `type`, `round` and `circle` to define Button's style.
 

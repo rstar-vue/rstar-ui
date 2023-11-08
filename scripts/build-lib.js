@@ -29,9 +29,13 @@ const baseConfig = defineConfig({
   ]
 })
 const rollupOptions = defineConfig({
-  external: ['vue', 'unocss'],
-  globals: {
-    vue: 'Vue'
+  build: {
+    rollupOptions: {
+      external: ['vue', 'unocss'],
+      globals: {
+        vue: 'Vue'
+      }
+    }
   }
 })
 // 生成 package.json

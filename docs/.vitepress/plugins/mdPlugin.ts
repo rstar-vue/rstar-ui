@@ -2,6 +2,7 @@ import MarkdownIt from 'markdown-it'
 import mdContainer from 'markdown-it-container'
 import fsExtra from 'fs-extra'
 import path from 'node:path'
+import { highlight } from '../utils/highlight'
 
 export default function mdPlugin(md: MarkdownIt) {
   md.use(mdContainer, 'demo', {
@@ -18,7 +19,9 @@ export default function mdPlugin(md: MarkdownIt) {
         }
         if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
 
-        return `<Demo source="${encodeURIComponent(source)}" path="${sourceFile}">`
+        return `<Demo source="${encodeURIComponent(
+          highlight(source, 'vue')
+        )}" path="${sourceFile}" raw-source="${encodeURIComponent(source)}">`
       } else {
         return `</Demo>`
       }
