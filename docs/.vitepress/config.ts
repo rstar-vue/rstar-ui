@@ -1,19 +1,25 @@
 import { defineConfig } from 'vitepress'
 import mdPlugin from './plugins/mdPlugin'
 
-const guides = [
-  { text: 'Quick Start', link: '/guide/quick-start' },
-  { text: 'Installation', link: '/guide/install' }
-]
-
 const components = [
   {
-    text: 'Basic',
-    collapsed: true,
+    text: 'Development',
+    items: [
+      { text: 'Installation', link: '/components/installation' },
+      { text: 'Quick Start', link: '/components/quick-start' }
+    ]
+  },
+  {
+    text: 'Components',
     items: [
       {
-        text: 'Button',
-        link: '/components/button'
+        text: 'Basic',
+        items: [
+          {
+            text: 'Button',
+            link: '/components/button'
+          }
+        ]
       }
     ]
   }
@@ -26,19 +32,12 @@ const theme = [
   }
 ]
 const sidebar = {
-  '/guide': [
-    {
-      text: 'Developer Guide',
-      items: guides
-    }
-  ],
   '/components': components,
   '/theme': theme
 }
 
 const nav = [
-  { text: 'Guide', items: guides },
-  { text: 'Components', items: components },
+  { text: 'Components', link: '/components/button' },
   { text: 'Theme', items: theme }
 ]
 
